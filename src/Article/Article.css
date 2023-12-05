@@ -1,0 +1,54 @@
+.article-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 16px;
+    padding: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 25%;
+  }
+  
+  .article-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .article-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .article-title {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+  
+  .article-author {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 4px;
+  }
+  
+  .article-published-at {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 8px;
+  }
+  
+  .article-description {
+    margin-bottom: 12px;
+  }
+  
+  .article-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .article-link:hover {
+    text-decoration: underline;
+  }
+  
