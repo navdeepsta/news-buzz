@@ -20,7 +20,8 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className="App">
+      <h1>News Buzz</h1>
       <Search onSearch={handleSearch} />
       <div className="articles">
       {articles.length > 0 &&
@@ -31,6 +32,6 @@ export default function Home() {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }
