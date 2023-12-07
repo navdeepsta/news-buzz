@@ -1,0 +1,15 @@
+
+nav li {
+    display: inline;
+    list-style: none;
+    margin: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(109, 105, 105);
+}
+
+a:hover {
+    color: black;   
+}

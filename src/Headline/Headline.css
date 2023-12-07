@@ -1,0 +1,15 @@
+.headline {
+    text-align: center;
+    border: 1px solid black;
+    margin: 8px;
+    padding: 8px;
+}
+
+.headline img {
+    width: 200px;
+    height: 200px;
+}
+
+.headline a {
+    font-size: large;
+}
