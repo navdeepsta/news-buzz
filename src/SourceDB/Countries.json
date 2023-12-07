@@ -1,0 +1,29 @@
+{
+  "countries": [
+    {
+      "id" : 1,
+      "name": "Australia",
+      "code": "au"
+    },
+    {
+      "id" : 2,
+      "name": "France",
+      "code": "fr"
+    },
+    {
+      "id" : 3,
+      "name": "India",
+      "code": "in"
+    },
+    {
+      "id" : 4,
+      "name": "Russia",
+      "code": "ru"
+    },
+    {
+      "id" : 5,
+      "name": "China",
+      "code": "cn"
+    }
+  ]
+}

@@ -5,7 +5,6 @@ import "./Categories.css";
 const categories = [
   "Business",
   "Entertainment",
-  "General",
   "Health",
   "Science",
   "Sports",
