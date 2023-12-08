@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Search from "../Search";
-import Article from "../Article";
+import Articles from "../Articles";
 import Categories from "../Categories";
 import "./Home.css";
 
@@ -26,20 +26,7 @@ export default function Home() {
       <h1>News Buzz</h1>
       <Search onSearch={handleSearch} />
       <Categories />
-      <div className="articles">
-        {articles.length > 0 &&
-          articles.map(
-            (article) =>
-              article.author && (
-                <Article
-                  article={article}
-                  key={
-                    article.title + article.source.name + article.publishedAt
-                  }
-                />
-              )
-          )}
-      </div>
+      <Articles articles={articles} />
     </div>
   );
 }
