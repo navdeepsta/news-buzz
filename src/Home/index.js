@@ -1,12 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "../Search";
 import Articles from "../Articles";
 import Categories from "../Categories";
-import "./Home.css";
 
 const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 export default function Home() {
   const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://newsapi.org/v2/top-headlines?language=en&category=general`, {
+      headers: {
+        "X-Api-Key": NEWS_API_KEY,
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        setArticles(response.articles);
+      })
+      .catch((error) => console.log(error));
+
+  }, [])
 
   const handleSearch = (searchTerm) => {
     fetch(`https://newsapi.org/v2/everything?q=${searchTerm}`, {
