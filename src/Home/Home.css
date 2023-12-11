@@ -1,5 +1,43 @@
-.articles {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.home-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: lightblue;
+    padding: 5px 10px;
 }
+
+.reading-list {
+    display: flex;
+    justify-content: center;
+    gap: 5px
+}
+
+.header {
+   display: flex;
+   justify-content: center;
+   margin: 16px 0px;
+}
+
+.date, .weather, .heading {
+    width: 25%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.heading {   
+    justify-content: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+ }
+
+.weather {
+    justify-content: end;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+  }

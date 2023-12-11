@@ -4,6 +4,10 @@ import Articles from "../Articles";
 import Categories from "../Categories";
 import { readingListDB } from "../ReadingListDB/ReadingListDB";
 import { Link } from "react-router-dom";
+import { date } from "../Util/Util";
+import Weather from "../Weather";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import "./Home.css";
 
 const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 export default function Home() {
@@ -14,6 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     fetch(`https://newsapi.org/v2/top-headlines?language=en&category=general`, {
+      method: "GET", mode: "cors",
       headers: {
         "X-Api-Key": NEWS_API_KEY,
       },
@@ -27,6 +32,7 @@ export default function Home() {
 
   const handleSearch = (searchTerm) => {
     fetch(`https://newsapi.org/v2/everything?q=${searchTerm}`, {
+      method: "GET", mode: "cors",
       headers: {
         "X-Api-Key": NEWS_API_KEY,
       },
@@ -40,12 +46,24 @@ export default function Home() {
 
   return (
     <div className="App">
-      <Link to={`/readingList`}>
-        ReadingList: {readingList.length} Articles
-      </Link>
-      <h1>News Buzz</h1>
-      <Search onSearch={handleSearch} />
-      <Categories />
+      <div className="home-header">
+        <div className="reading-list">
+          <AutoStoriesIcon color="primary" />
+          <Link to={`/readingList`} style={{ fontSize: "1.2em" }}>
+            {readingList.length}{" "}
+            {readingList.length > 1 ? "Articles" : "Article"}
+          </Link>
+        </div>
+        <section className="header">
+          <div className="date">{date.getDate()}</div>
+          <div className="heading">
+            <h1>Web Wire</h1>
+          </div>
+          <Weather />
+        </section>
+        <Search onSearch={handleSearch} />
+        <Categories />
+      </div>
       {articles.length ? (
         <Articles
           articles={articles}
