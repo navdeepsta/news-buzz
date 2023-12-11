@@ -1,0 +1,14 @@
+.weather h2 {
+    font-size: 1.2em;
+    font-weight: lighter;
+}
+
+.weather p {
+    font-weight:lighter;
+    display: flex;
+}
+
+.weather img {
+    width: 25px;
+    height: 25px;
+}
