@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./Search.css";
 
 const Search = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -9,6 +10,7 @@ const Search = ({ onSearch }) => {
 
   const handleSearch = () => {
     onSearch(searchTerm);
+    setSearchTerm('');
   };
 
   return (
@@ -21,7 +23,7 @@ const Search = ({ onSearch }) => {
         onChange={handleInputChange}
         aria-label="Search keyword or phrase"
       />
-      <button onClick={handleSearch} aria-label="Submit search">
+      <button className="search-button" onClick={handleSearch} aria-label="Submit search">
         Search
       </button>
     </>
