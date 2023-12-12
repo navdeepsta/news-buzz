@@ -1,9 +1,10 @@
 import React from "react";
 import { readingListDB } from "../ReadingListDB/ReadingListDB";
+import AddCardIcon from '@mui/icons-material/AddCard';
 import './Article.css';
 
 const Article = (props) => {
-  const { author, title, description, urlToImage, url, publishedAt, source } =
+  const { title, description, image, url, publishedAt, source } =
     props.article;
 
     const handleClick = () => {
@@ -17,12 +18,18 @@ const Article = (props) => {
 
   return (
     <article className="article-card">
-       <button className="article-add" onClick={handleClick}>Add to Reading List</button>
-      <img src={urlToImage} alt={title} className="article-image" />
+      <div className="article-header">
+        <span className="source-name">{source.name}</span>
+        <span className="card-icon"><AddCardIcon onClick={handleClick} color="primary" /></span>
+        <p className="article-published-at">
+          {new Date(publishedAt).toLocaleString()}
+        </p>
+      </div>
+      
+      <img src={image} alt={title} className="article-image" />
       <div className="article-details">
         <h2 className="article-title">{title}</h2>
-        <p className="article-author">By {author}</p>
-        <p className="article-description">{description}</p>
+        <p className="article-description">{description.slice(0, 150)}
         <a
           href={url}
           target="_blank"
@@ -30,12 +37,11 @@ const Article = (props) => {
           className="article-link"
           aria-label={`Read more about ${title}`}
         >
-          Read More
+          ...more
         </a>
-        <p className="article-published-at">
-          Published at {new Date(publishedAt).toLocaleString()}
         </p>
       </div>
+   
     </article>
   );
 };

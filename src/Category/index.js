@@ -16,12 +16,7 @@ function Category() {
 
   useEffect(() => {
     fetch(
-      `https://newsapi.org/v2/top-headlines?category=${category}&language=en`,
-      {
-        headers: {
-          "X-Api-Key": NEWS_API_KEY,
-        },
-      }
+      `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&apikey=${NEWS_API_KEY}`
     )
       .then((response) => response.json())
       .then((response) => {
@@ -39,7 +34,7 @@ function Category() {
       ) : (
         <Link to={`/`}>Home</Link>
       )}
-      <h1>{category} News</h1>
+      <h1>{category.charAt(0).toUpperCase() + category.slice(1)} News</h1>
       {source ? (
         <Outlet />
       ) : (

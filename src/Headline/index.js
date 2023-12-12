@@ -1,16 +1,20 @@
-import React from 'react';
-import './Headline.css';
+import React from "react";
+import Box from "@mui/material/Box";
+import "./Headline.css";
 
-export default function Headline( props ) {
-  const { author, title, description, urlToImage, url, publishedAt, source } = props.headline;
+export default function Headline(props) {
+  const { title, image, url, source } = props.headline;
 
   return (
-    <div className="headline">
-        <img src={urlToImage} alt={title} />
+    <Box display="flex" justifyContent="center">
+      <div className="headline-card">
+        <p>{source.name}</p>
+        <img src={image} alt={title} />
         <p>{title}</p>
-        <p>{author}</p>
-        <p>{description}</p>
-        <a href={url} target='_blank'>Read more</a>
-    </div>
-  )
+        <a href={url} target="_blank">
+          Read more
+        </a>
+      </div>
+    </Box>
+  );
 }

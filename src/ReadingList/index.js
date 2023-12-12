@@ -27,7 +27,7 @@ export default function ReadingList() {
         <Button variant="outlined" size="small" color="error" onClick={() => handleRemove(...readingList)}>
           Remove All
         </Button>
-      </section>
+      </section> 
       <div className="container">
         <Box sx={{ flexGrow: 1}}>
           <Grid container spacing={{ xs: 2, md: 2 }}>
@@ -52,7 +52,7 @@ export default function ReadingList() {
                     className="article-link"
                     aria-label={`Read more about ${article.title}`}
                   >
-                   <img src={article.urlToImage} />
+                   <img src={article.image} />
                    <p>{article.title.slice(0, 200)}</p>
                   </a>
                 </div>

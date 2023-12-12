@@ -17,12 +17,7 @@ export default function Home() {
   );
 
   useEffect(() => {
-    fetch(`https://newsapi.org/v2/top-headlines?language=en&category=general`, {
-      method: "GET", mode: "cors",
-      headers: {
-        "X-Api-Key": NEWS_API_KEY,
-      },
-    })
+    fetch(`https://gnews.io/api/v4/top-headlines?category=general&lang=en&apikey=${NEWS_API_KEY}`)
       .then((response) => response.json())
       .then((response) => {
         setArticles(response.articles);
@@ -31,12 +26,7 @@ export default function Home() {
   }, []);
 
   const handleSearch = (searchTerm) => {
-    fetch(`https://newsapi.org/v2/everything?q=${searchTerm}`, {
-      method: "GET", mode: "cors",
-      headers: {
-        "X-Api-Key": NEWS_API_KEY,
-      },
-    })
+    fetch(`https://gnews.io/api/v4/search?q=${searchTerm}&apikey=${NEWS_API_KEY}`)
       .then((response) => response.json())
       .then((response) => {
         setArticles(response.articles);

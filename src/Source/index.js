@@ -12,12 +12,7 @@ export default function Source() {
   
   useEffect(() => {
     fetch(
-      `https://newsapi.org/v2/top-headlines?category=${category}&country=${source}`,
-      {
-        headers: {
-          "X-Api-Key": NEWS_API_KEY,
-        },
-      }
+      `https://gnews.io/api/v4/top-headlines?category=${category}&country=${source}&apikey=${NEWS_API_KEY}`
     )
       .then((response) => response.json())
       .then((response) => {
@@ -27,15 +22,15 @@ export default function Source() {
   }, [])
 
   return (
-    <div>
+    <div className="source-container">
         <h3>{countries.find(country=>country.code === source).name}</h3>
         { headlines?.length > 0 ? (
             headlines.map(
               (headline) =>
-                headline.author && (
-                  <div className="source" key={headline.title + headline.author + source}>
+                headline.image && (
+                  <div className="source" key={headline.title  + source}>
+                    <img src={headline.image} />
                     <p>{headline.title}</p>
-                    <p>{headline.author}</p>
                     <p>{headline.description}</p>
                     <a href={headline.url}>More</a>
                   </div>
