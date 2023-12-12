@@ -1,15 +1,21 @@
+nav {
+    margin: 0 auto;
+}
 
 nav li {
     display: inline;
     list-style: none;
-    margin: 4px;
+    font-size: 1.2em;
+    margin: 0px 5px;
 }
 
 a {
     text-decoration: none;
-    color: rgb(109, 105, 105);
+    /* color:  #0000EE; */
+   color:black;
 }
 
 a:hover {
-    color: black;   
+    text-decoration: underline;     
 }
+

@@ -1,27 +1,39 @@
 .article-card {
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 4px;
     overflow: hidden;
-    margin: 16px;
-    padding: 16px;
+    margin: 4px;
+    height: 500px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 25%;
   }
-  
+
+  .article-header .source-name {
+    float: left;
+    font-weight: bold;
+    margin-left: 8px;
+  }
+
+  .article-header .card-icon {
+    float: right;
+  }
+
   .article-image {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 200px;
+    border-radius: 4px;
     margin-bottom: 12px;
+    object-fit: cover;
   }
   
   .article-details {
     display: flex;
     flex-direction: column;
+    padding: 8px;
   }
   
   .article-title {
     font-size: 1.2rem;
+    font-weight: normal;
     margin-bottom: 4px;
   }
   
@@ -34,7 +46,10 @@
   .article-published-at {
     font-size: 0.8rem;
     color: #777;
-    margin-bottom: 8px;
+    clear: both;
+    text-align: start;
+    margin-left: 8px;
+
   }
   
   .article-description {
@@ -42,7 +57,6 @@
   }
   
   .article-link {
-    color: #007bff;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
@@ -52,3 +66,7 @@
     text-decoration: underline;
   }
   
+  .article-add {
+    position: relative;
+    bottom: 0px;
+  }

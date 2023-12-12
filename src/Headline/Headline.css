@@ -1,15 +1,19 @@
-.headline {
-    text-align: center;
-    border: 1px solid black;
-    margin: 8px;
-    padding: 8px;
+.headline-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 4px;
+    height: 350px;
+    width : 280px;
+    min-width: 280px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.headline img {
-    width: 200px;
+.headline-card img {
+    width: 100%;
     height: 200px;
 }
 
-.headline a {
-    font-size: large;
+.headline-card p, a {
+    padding: 5px;
 }

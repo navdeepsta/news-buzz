@@ -1,4 +1,16 @@
+.source-container {
+    margin: 16px;
+}
+
 .source {
     border: 1px solid black;
+    border-radius: 5px;
     margin: 4px;
+}
+.source p {
+    padding: 4px;
+}
+
+.source img {
+    width: 100%;
 }
